@@ -12,3 +12,7 @@ Credits for images to Ragnaplace, where they are being pulled.
 Version 1.0
 
 Based on: https://www.ragnarokmvptimer.com/
+
+
+# Screenshots
+![image](https://user-images.githubusercontent.com/10372732/155405938-d62bb865-ecd9-4f29-be1b-bd4982c85f91.png)
