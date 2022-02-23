@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragnarok MVP Timer</title>
+    <link rel="icon" href="./assets/img/favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <div class="row row-banner">
+                    <div class="col-md-12">
+                        <img src="./assets/img/mvp.png" alt="" srcset="" class="img-fluid mx-auto d-block" />
+                    </div>
+                </div>
+                <form class="form">
+                    <div class="row my-3">
+                        <div class="col-md-12">
+                            <label for="mvp-list" class="form-label">Pick a MVP</label>
+                            <select name="mvp-list" id="mvp-list" class="form-control col-md-12">          
+                    </select>
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col-md-12">
+                            <label for="mvp-list" class="form-label">Pick a Map</label>
+                            <select name="mvp-map" id="mvp-map" class="form-control col-md-12">     
+                    </select>
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col-md-4">
+                            <label for="position-x" class="form-label">X Position (optional)</label>
+                            <input type="text" class="form-control" name="position-x" id="position-x" placeholder="Type x position">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="position-y" class="form-label">Y Position (optional)</label>
+                            <input type="text" class="form-control" name="position-y" id="position-y" placeholder="Type Y position">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="hour" class="form-label">Hour</label>
+                            <input type="text" class="form-control" name="hour" id="hour" placeholder="Type Hour">
+                        </div>
+                    </div>
+                </form>
+                <div class="col-md-12">
+                    <button id="button-add-mvp" name="button-add-mvp" class="btn btn-primary col-md-12">Add MVP</button>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-responsive" id="mvp-table" name="mvp-table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Location</th>
+                                    <th scope="col">Hour</th>
+                                    <th scope="col">Timer</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-hover">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio id="mvp-sound" src="./assets/sound/mvp.mp3" preload></audio>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
