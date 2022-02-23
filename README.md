@@ -1,4 +1,4 @@
-# ragnarok-mvp-timer
+# Ragnarok MVP Timer
 This page was developed in order to allow you to save your MvP's time in an easy way.
 
 Release the audio permission in your browser to receive a notification when the MvP is born.
@@ -12,6 +12,11 @@ Credits for images to Ragnaplace, where they are being pulled.
 Version 1.0
 
 Based on: https://www.ragnarokmvptimer.com/
+
+# Technologies
+- HTML
+- CSS (Bootstrap 5)
+- JavaScript
 
 
 # Screenshots
