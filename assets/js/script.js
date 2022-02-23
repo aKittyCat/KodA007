@@ -73,7 +73,6 @@ function checkForm() {
             timer_id: undefined
         };
 
-        console.log(mvp);
         addMvpToTable(mvp);
     }
 }
