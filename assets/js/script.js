@@ -68,6 +68,9 @@ function checkForm() {
             location_x: x,
             location_y: y,
             respawn: mvp_map[mvp_map.selectedIndex].value,
+            year: hour[2],
+            month: hour[3],
+            day: hour[4],
             hours: hour[0],
             minutes: hour[1],
             timer_id: undefined
@@ -95,7 +98,7 @@ function addMvpToTable(mvp, save = true) {
     mvp_location.innerHTML = mvp.location;
     if (mvp.location_x != "" && mvp.location_y != "") mvp_location.innerHTML += " " + mvp.location_x + "," + mvp.location_y;
     mvp_hour.innerHTML = mvp.hours.pad(2) + ':' + mvp.minutes.pad(2);
-    mvp.timer_id = setCountdown(mvp_timer, mvp.hours, mvp.minutes, mvp.respawn, 0, row);
+    mvp.timer_id = setCountdown(mvp_timer, mvp.year, mvp.month, mvp.day, mvp.hours, mvp.minutes, mvp.respawn, 0, row);
     mvp_actions.innerHTML = '<i class="fa-solid fa-rotate" data-toggle="tooltip" data-placement="top" title="Renew" onclick=renewTimer(' + mvp.timer_id + ')></i> <i class="fa-solid fa-xmark" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="Delete" onclick=removeTimer(' + mvp.timer_id + ')></i>';
     enableTooltip();
     timer_list.push(mvp);
@@ -111,7 +114,7 @@ function getHourForm() {
         if (hours >= 0 && hours <= 23) date.setHours(hours);
         if (minutes >= 0 && minutes <= 59) date.setMinutes(minutes);
     }
-    return [date.getHours(), date.getMinutes()];
+    return [date.getHours(), date.getMinutes(), date.getFullYear(), date.getMonth(), date.getDate()];
 }
 
 //  Timer Functions
@@ -119,8 +122,11 @@ function getHourForm() {
 let timers = [];
 let current_timer = 0;
 
-function setCountdown(element, hours, minutes, respawn = 3600000, timer_id = 0, row) {
+function setCountdown(element, year, month, day, hours, minutes, respawn = 3600000, timer_id = 0, row) {
     let date = new Date();
+    date.setFullYear(year);
+    date.setMonth(month);
+    date.setDate(day);
     date.setHours(hours);
     date.setMinutes(minutes);
     let countDownDate = date.getTime() + parseInt(respawn);
@@ -166,7 +172,7 @@ function countDown(element, countDownDate, timer_index) {
 function renewTimer(timer_id) {
     let current_time = new Date();
     clearInterval(timers[timer_id].timer);
-    setCountdown(timers[timer_id].element, current_time.getHours(), current_time.getMinutes(), timers[timer_id].respawn, timer_id, timers[timer_id].row);
+    setCountdown(timers[timer_id].element, current_time.getFullYear(), current_time.getMonth(), current_time.getDate(), current_time.getHours(), current_time.getMinutes(), timers[timer_id].respawn, timer_id, timers[timer_id].row);
 }
 
 function removeTimer(timer_id) {
