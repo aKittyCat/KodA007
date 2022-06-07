@@ -1,1 +1,0 @@
-<img src="./assets/img/mvp.png" alt="" srcset="" class="img-fluid mx-auto d-block" />
